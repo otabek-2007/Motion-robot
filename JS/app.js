@@ -4,6 +4,7 @@ const navbar =document.querySelector('.navbar')
 
 menu.addEventListener('click',function(){
     navbar.classList.toggle('active')
+    
 })
 window.addEventListener('click', function (event) {
     // if (!event.target.classList.contains('navbar')==navbar) {
