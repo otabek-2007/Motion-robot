@@ -73,8 +73,8 @@
 
                     .menu {
                         position: relative;
-                        top: 20px;
-                        right: 30px;
+                        top: 0px;
+                        right: 0px;
                         border: 1px solid white;
                         border-radius: 5px;
                         cursor: pointer;
@@ -92,9 +92,9 @@
                 }
 
                 .header-text {
-                    width: 30%;
                     display: inline-flex;
                     margin: 30px 10px;
+                    padding-right: 35px;
 
                     a {
                         font-size: 38.4px;
@@ -199,6 +199,7 @@
                     display: inline-flex;
                     justify-content: center;
                     width: 100%;
+                    flex-wrap: wrap;
 
                     span {
                         border-radius: 50%;
@@ -302,11 +303,11 @@
                     }
 
                     textarea {
-                        max-width: 100%;
+                        max-width: 50%;
                         border: 0px;
                         border-bottom: 1px solid #fff;
                         height: 50px;
-                        background: none;
+                        background: transparent;
                         padding-bottom: 10px;
                         font-size: 20px;
                         padding-top: 20px;
@@ -353,12 +354,12 @@
 
             .contact-main {
                 width: 70%;
+                display: flex;
+                flex-direction: row;
+
 
                 .contact-into {
                     width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
 
                     .contact-input {
                         width: 40%;
@@ -382,35 +383,42 @@
 
                             textarea {
                                 outline: none;
-                                max-width: 385px;
-                                min-width: 385px;
+                                max-width: 100%;
+                                min-width: 50px;
                                 font-size: 20px;
+                                margin-top: 15px;
+                                background: none;
                                 padding: 30px;
+                                border-top: 0;
+                                border-left: 0;
+                                border-right: 0;
+                                border-bottom: 1px solid #fff;
                                 color: black;
                                 max-height: 160px;
                             }
                         }
                     }
 
-                    .contact-map {
-                        width: 50%;
-                        margin-left: 50px;
+                }
 
-                        .map-text {
-                            width: 100%;
-                            font-size: 18px;
-                            color: #fff;
+                .contact-map {
+                    width: 50%;
 
-                            p {
-                                line-height: 35px;
-                            }
+
+                    .map-text {
+                        width: 100%;
+                        font-size: 18px;
+                        color: #fff;
+
+                        p {
+                            line-height: 35px;
                         }
+                    }
 
-                        .map {
-                            iframe {
-                                max-height: 400px;
-                                max-width: 100%;
-                            }
+                    .map {
+                        iframe {
+                            max-height: 400px;
+                            max-width: 100%;
                         }
                     }
                 }
@@ -634,31 +642,38 @@
     }
 
     @media screen and(max-width:1420px) {
-        .all-page .contact-mid .contact-main .contact-into {
+        .all-page .contact-mid .contact-main {
             display: flex;
             flex-direction: column;
-            width: 100%;
+            justify-content: center;
+            max-width: 100%;
 
-            .contact-input {
+            .contact-into {
                 width: 90%;
 
 
-            }
+                .contact-input {
+                    width: 90%;
 
-            .contact-map {
-                width: 90%;
 
-                .map-text {
-                    text-align: center;
                 }
 
-                .map {
-                    iframe {
-                        width: 100%;
+                .contact-map {
+                    width: 100%;
+
+                    .map-text {
+                        text-align: center;
+                    }
+
+                    .map {
+                        iframe {
+                            max-width: 700px;
+                        }
                     }
                 }
             }
         }
+
     }
 
     @media screen and (max-width:1200px) {
@@ -691,9 +706,6 @@
             }
 
             .container .header-box {
-                .header-text {
-                    width: 40%;
-                }
 
                 .navbar {
                     width: 37%;
@@ -708,8 +720,8 @@
                     nav {
                         background-color: #567086;
                         position: absolute;
-                        right: 63px;
-                        top: 100px;
+                        right: 38px;
+                        top: 84px;
 
                         border-radius: 10px;
 
@@ -869,13 +881,7 @@
 
     @media screen and(max-width:533px) {
         .all-page {
-            .container {
-                .header-box {
-                    .header-text {
-                        width: 60%;
-                    }
-                }
-            }
+
 
             .middle-box .middle-in_Box .middle-main .main-in {
 
@@ -911,11 +917,26 @@
         }
     }
 
+    @media screen and (max-width:430px) {
+        .all-page .about .middle-in_Box .middle-main {
+            width: 100%;
+
+            .main-in {
+                width: 100%;
+                margin: 0px;
+
+                .text {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
     @media screen and(max-width:400px) {
         .all-page .container .header-box {
 
             .header-text {
-                transform: translateX(50px);
+
 
                 a {
                     font-size: 40px;
@@ -925,7 +946,7 @@
 
             .menu-box {
                 right: 0px;
-                top: 80px;
+
 
                 .menu {
                     right: 0px;
@@ -933,7 +954,7 @@
             }
 
             .navbar nav {
-                top: 140px;
+
                 right: 0px;
             }
         }
@@ -948,23 +969,16 @@
                     width: 90%;
                     flex-direction: column;
 
-                    .header-text {
-                        transform: translateX(20px);
-                        width: 100%;
-                    }
+
 
                     .menu-box {
                         right: 0px;
-                        top: 150px;
 
                         .menu {
                             right: 0px;
                         }
                     }
 
-                    .navbar nav {
-                        margin-top: 70px;
-                    }
 
                 }
             }

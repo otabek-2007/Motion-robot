@@ -83,8 +83,8 @@ video {
 
 .all-page .container .header-box .menu-box .menu {
   position: relative;
-  top: 20px;
-  right: 30px;
+  top: 0px;
+  right: 0px;
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
@@ -109,11 +109,11 @@ video {
 }
 
 .all-page .container .header-box .header-text {
-  width: 30%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 30px 10px;
+  padding-right: 35px;
 }
 
 .all-page .container .header-box .header-text a {
@@ -240,6 +240,8 @@ video {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .all-page .img-container .img-box .balon-container span {
@@ -357,11 +359,11 @@ video {
 }
 
 .all-page .contact-mid .contact-box .input-contact textarea {
-  max-width: 100%;
+  max-width: 50%;
   border: 0px;
   border-bottom: 1px solid #fff;
   height: 50px;
-  background: none;
+  background: transparent;
   padding-bottom: 10px;
   font-size: 20px;
   padding-top: 20px;
@@ -404,10 +406,6 @@ video {
 
 .all-page .contact-mid .contact-main {
   width: 70%;
-}
-
-.all-page .contact-mid .contact-main .contact-into {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -415,9 +413,10 @@ video {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+
+.all-page .contact-mid .contact-main .contact-into {
+  width: 100%;
 }
 
 .all-page .contact-mid .contact-main .contact-into .contact-input {
@@ -448,30 +447,35 @@ video {
 
 .all-page .contact-mid .contact-main .contact-into .contact-input .input-box textarea {
   outline: none;
-  max-width: 385px;
-  min-width: 385px;
+  max-width: 100%;
+  min-width: 50px;
   font-size: 20px;
+  margin-top: 15px;
+  background: none;
   padding: 30px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #fff;
   color: black;
   max-height: 160px;
 }
 
-.all-page .contact-mid .contact-main .contact-into .contact-map {
+.all-page .contact-mid .contact-main .contact-map {
   width: 50%;
-  margin-left: 50px;
 }
 
-.all-page .contact-mid .contact-main .contact-into .contact-map .map-text {
+.all-page .contact-mid .contact-main .contact-map .map-text {
   width: 100%;
   font-size: 18px;
   color: #fff;
 }
 
-.all-page .contact-mid .contact-main .contact-into .contact-map .map-text p {
+.all-page .contact-mid .contact-main .contact-map .map-text p {
   line-height: 35px;
 }
 
-.all-page .contact-mid .contact-main .contact-into .contact-map .map iframe {
+.all-page .contact-mid .contact-main .contact-map .map iframe {
   max-height: 400px;
   max-width: 100%;
 }
@@ -710,7 +714,7 @@ video {
 }
 
 @media screen and (max-width: 1420px) {
-  .all-page .contact-mid .contact-main .contact-into {
+  .all-page .contact-mid .contact-main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -718,19 +722,25 @@ video {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 100%;
+  }
+  .all-page .contact-mid .contact-main .contact-into {
+    width: 90%;
   }
   .all-page .contact-mid .contact-main .contact-into .contact-input {
     width: 90%;
   }
   .all-page .contact-mid .contact-main .contact-into .contact-map {
-    width: 90%;
+    width: 100%;
   }
   .all-page .contact-mid .contact-main .contact-into .contact-map .map-text {
     text-align: center;
   }
   .all-page .contact-mid .contact-main .contact-into .contact-map .map iframe {
-    width: 100%;
+    max-width: 700px;
   }
 }
 
@@ -757,9 +767,6 @@ video {
   .all-page .middle-box .middle-in_Box .middle-main .main-in .img img {
     width: 100%;
   }
-  .all-page .container .header-box .header-text {
-    width: 40%;
-  }
   .all-page .container .header-box .navbar {
     width: 37%;
     z-index: 222222;
@@ -775,8 +782,8 @@ video {
   .all-page .container .header-box .navbar nav {
     background-color: #567086;
     position: absolute;
-    right: 63px;
-    top: 100px;
+    right: 38px;
+    top: 84px;
     border-radius: 10px;
   }
   .all-page .container .header-box .navbar nav ul {
@@ -900,9 +907,6 @@ video {
 }
 
 @media screen and (max-width: 533px) {
-  .all-page .container .header-box .header-text {
-    width: 60%;
-  }
   .all-page .middle-box .middle-in_Box .middle-main .main-in .img {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -934,23 +938,30 @@ video {
   }
 }
 
-@media screen and (max-width: 400px) {
-  .all-page .container .header-box .header-text {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+@media screen and (max-width: 430px) {
+  .all-page .about .middle-in_Box .middle-main {
+    width: 100%;
   }
+  .all-page .about .middle-in_Box .middle-main .main-in {
+    width: 100%;
+    margin: 0px;
+  }
+  .all-page .about .middle-in_Box .middle-main .main-in .text {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .all-page .container .header-box .header-text a {
     font-size: 40px;
   }
   .all-page .container .header-box .menu-box {
     right: 0px;
-    top: 80px;
   }
   .all-page .container .header-box .menu-box .menu {
     right: 0px;
   }
   .all-page .container .header-box .navbar nav {
-    top: 140px;
     right: 0px;
   }
 }
@@ -966,20 +977,11 @@ video {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .all-page .container .header-box .header-text {
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px);
-    width: 100%;
-  }
   .all-page .container .header-box .menu-box {
     right: 0px;
-    top: 150px;
   }
   .all-page .container .header-box .menu-box .menu {
     right: 0px;
-  }
-  .all-page .container .header-box .navbar nav {
-    margin-top: 70px;
   }
   .all-page .middle-box {
     margin-top: 200px;

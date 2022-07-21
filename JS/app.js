@@ -113,7 +113,12 @@ let imagesContainer = [
     </div>`,
 ]
  
- let sliderItemsCount=2
+let sliderItemsCount = 0
+if( window.innerWidth>=1000) sliderItemsCount=5
+    else if(window.innerWidth<1000 && window.innerWidth>=700) sliderItemsCount=4 
+    else if (window.innerWidth < 700&&window.innerWidth>=450) sliderItemsCount = 3
+    else if (window.innerWidth < 450) sliderItemsCount = 1
+ 
  /* = = = = = = Slider = = = = = = = */
  
 const sliderFunc = (array = [], step = 1, count = 4, index = 0) => {
@@ -171,4 +176,24 @@ for (const [index,btn] of sliderBtns.entries()) {
         imagesContent.innerHTML = sliderFunc(imagesContainer, 1, sliderItemsCount, index)
     })
 }
+
+window.addEventListener('resize', function (event) {
+    let checker = 0;
+    if( window.innerWidth>=1000) checker=5
+    else if(window.innerWidth<1000 && window.innerWidth>=700) checker=4 
+    else if (window.innerWidth < 700&&window.innerWidth>=450) checker = 3
+    else if (window.innerWidth < 450) checker = 1
+
+    if (checker != sliderItemsCount) {
+        sliderButtons = ''
+        for (let index = 0; index < sliderBtnsCount(imagesContainer.length,checker); index++) {
+            sliderButtons += `<span></span>`
+        }
+        imagesContent.innerHTML = sliderFunc(imagesContainer, 1, checker, 0)
+        sliderBtnsContainer.innerHTML = sliderButtons;
+        sliderItemsCount = checker
+    }
+})
+
+
 
