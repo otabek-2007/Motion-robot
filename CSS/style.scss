@@ -223,12 +223,14 @@
 
                     .img-item:hover .img-text {
                         opacity: 1;
+                        backdrop-filter: blur(10px);
                         transform: translateX(0px);
                     }
 
                     .img-item:hover {
                         opacity: 0.5;
                     }
+
 
                     .img-item {
                         margin: 20px;
@@ -373,14 +375,19 @@
                                 color: #fff;
                                 border: 0px;
                                 outline: none;
-                                padding: 20px 0p;
+                                padding: 20px 0px;
                                 font-size: 17px;
                                 border-bottom: 1px solid #fff;
                             }
 
                             textarea {
-                                height: 43px;
-                                margin-top: 10px;
+                                outline: none;
+                                max-width: 385px;
+                                min-width: 385px;
+                                font-size: 20px;
+                                padding: 30px;
+                                color: black;
+                                max-height: 160px;
                             }
                         }
                     }
@@ -396,6 +403,13 @@
 
                             p {
                                 line-height: 35px;
+                            }
+                        }
+
+                        .map {
+                            iframe {
+                                max-height: 400px;
+                                max-width: 100%;
                             }
                         }
                     }
@@ -615,6 +629,34 @@
                     font-weight: 300;
                 }
 
+            }
+        }
+    }
+
+    @media screen and(max-width:1420px) {
+        .all-page .contact-mid .contact-main .contact-into {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .contact-input {
+                width: 90%;
+
+
+            }
+
+            .contact-map {
+                width: 90%;
+
+                .map-text {
+                    text-align: center;
+                }
+
+                .map {
+                    iframe {
+                        width: 100%;
+                    }
+                }
             }
         }
     }

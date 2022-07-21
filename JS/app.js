@@ -113,7 +113,7 @@ let imagesContainer = [
     </div>`,
 ]
  
- let sliderItemsCount=4
+ let sliderItemsCount=2
  /* = = = = = = Slider = = = = = = = */
  
 const sliderFunc = (array = [], step = 1, count = 4, index = 0) => {
